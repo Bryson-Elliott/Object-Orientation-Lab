@@ -19,21 +19,26 @@ console.log(me);
 //and goodBoy (a boolean).
 
 //Code here
-
-
+let dog = {
+  name: `Kujo`,
+  color: `Dirty blonde`,
+  age: 7,
+  goodBoy: true
+}
+console.log(dog)
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
+console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
+console.log(dog[`color`])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -43,33 +48,42 @@ console.log(me);
 */
 
 //Code here
-
-
+let favoriteThings = {
+  band: `NF`,
+  food: `Pasta`,
+  person: `Tay`,
+  book: `Hunger Games`,
+  movie: `Big Hero 6`,
+  holiday: `Christmas`,
+}
+//console.log(favoriteThings)
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 */
 
 //Code here
-
-
+favoriteThings.car = `Huayra`
+favoriteThings.brand = `Pagani`
+//console.log(favoriteThings)
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 */
 
 //Code here
-
-
-
+favoriteThings.food = `Chicken Nuggets`
+favoriteThings.book = `Harry Potter`
+//console.log(favoriteThings)
 //////////////////////////// PROBLEM 6 ////////////////////////////
 // Do not edit the code below.
-//var user = {
-  //name: 'Bryan',
-  //age: 24,
-  //pwHash: 'U+Ldlngx2BYQk',
-  //email: 'BryanSmith33@gmail.com',
-  //birthday: '05/02/1990',
-  //username: 'bryansmith33'
+var user = {
+  name: 'Bryan',
+  age: 24,
+  pwHash: 'U+Ldlngx2BYQk',
+  email: 'BryanSmith33@gmail.com',
+  birthday: '05/02/1990',
+  username: 'bryansmith33'
+}
 // Do not edit the code above.
 
 /*
@@ -79,16 +93,17 @@ console.log(me);
 */
 
 //Code Here
-
-
+user.name = `Bryan G. Smith`
+user.email = `bryan.smith@devmounta.in`
+//console.log(user)
 //////////////////////////// PROBLEM 7 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
-
-
+delete user.age
+console.log(user)
 //////////////////////////// PROBLEM 8 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -97,9 +112,19 @@ console.log(me);
 */
 
 //Code here
-
-
-
+class Cat {
+  constructor(name, age, color){
+    this.name = name,
+    this.age = age, 
+    this.color = color
+  }
+}
+let cat = {
+  name: `Milo`,
+  age: `2`,
+  color: `Grey & White`
+}
+console.log(cat.name)
 //////////////////////////// PROBLEM 9 ////////////////////////////
 /*
   Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
@@ -109,7 +134,17 @@ console.log(me);
 */
 
 //Code here
-
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell}
+    castSpell(){
+    console.log(`${this.name}, ${this.favoriteSpell}`)
+  }
+}
+let Harry = new Wizard(`Harry, 17, Wingardium leviosa`)
+Harry.castSpell()
 //////////////////////////// PROBLEM 10 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -132,10 +167,24 @@ console.log(me);
     Inside the function, reassign the value of the object's price
     to be newPrice.
 */
-
 //Code Here
-
-  
+class Phone {
+  constructor(brand, model, storage, color, price){
+  this.brand = brand, 
+  this.model = model,
+  this.storage = storage,
+  this.color = color,
+  this.price = price,
+  this.sold = false
+}  
+sell (){
+this.sold = true
+  console.log(`${this.brand} ${this.model} has been sold.`)
+}
+changePrice(newPrice){
+this.price = newPrice
+}
+}
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -147,7 +196,9 @@ console.log(me);
 */
 
 //Code Here
-
+let iPhone = new Phone(`Apple`, `iPhone`, 128, `black`, 500)
+let Galaxy = new Phone(`Samsung`, `Note`, 256, `White`, 350)
+let Nokia = new Phone(`Nokia`, `n8`, 512, `metallic`, 18)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -156,8 +207,8 @@ console.log(me);
 */ 
 
 //Code Here 
-
-
+iPhone.changePrice(250)
+console.log(iPhone.price)
 /*
   Now call the sell method on one of your other phone objects
 
@@ -165,7 +216,7 @@ console.log(me);
 */
 
 //Code Here 
-
+Nokia.sell()
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 
@@ -176,11 +227,11 @@ console.log(me);
 */
 
 //do not edit this object
-//const colors = {
-  //background: 'red',
-  //highlight: 'blue',
-  //text: 'yellow'
-//}
+const colors = {
+  background: 'red',
+  highlight: 'blue',
+  text: 'yellow'
+}
 //do not edit this object
 
 //Code Here 
@@ -194,21 +245,21 @@ console.log(me);
 */
 
 //do not edit the objects below
-//const contactInfo = {
-  //firstName: 'Helen',
-  //lastName: 'Parr',
-  //phoneNumber: 1234445555,
-  //email: 'helen@mymail.com',
-//}
+const contactInfo = {
+  firstName: 'Helen',
+  lastName: 'Parr',
+  phoneNumber: 1234445555,
+  email: 'helen@mymail.com',
+}
 
-//const shippingInfo = {
-  //firstName: 'Helen',
-  //lastName: 'Parr',
-  //street: '100 E. Main Street',
-  //city: 'Anytown',
-  //state: 'AZ',
-  //zipCode: 85004,
-//}
+const shippingInfo = {
+  firstName: 'Helen',
+  lastName: 'Parr',
+  street: '100 E. Main Street',
+  city: 'Anytown',
+  state: 'AZ',
+  zipCode: 85004,
+}
 //do not edit the objects above
 
 //Code Here
