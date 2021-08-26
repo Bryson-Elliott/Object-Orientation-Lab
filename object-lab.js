@@ -146,6 +146,7 @@ class Wizard {
 let Harry = new Wizard(`Harry, 17, Wingardium leviosa`)
 Harry.castSpell()
 //////////////////////////// PROBLEM 10 ////////////////////////////
+
 /*
     Write a class called Phone. We'll use it as if we were creating
     phone objects to keep track of inventory using an app.
@@ -194,7 +195,6 @@ this.price = newPrice
     - color: string
     - price: number
 */
-
 //Code Here
 let iPhone = new Phone(`Apple`, `iPhone`, 128, `black`, 500)
 let Galaxy = new Phone(`Samsung`, `Note`, 256, `White`, 350)
@@ -205,7 +205,6 @@ let Nokia = new Phone(`Nokia`, `n8`, 512, `metallic`, 18)
 
   Then console.log that object to see the price change
 */ 
-
 //Code Here 
 iPhone.changePrice(250)
 console.log(iPhone.price)
@@ -214,7 +213,6 @@ console.log(iPhone.price)
 
   Print the value of that phone's sell property to make sure it's been changed to true
 */
-
 //Code Here 
 Nokia.sell()
 
@@ -225,7 +223,6 @@ Nokia.sell()
   Store the copy in a variable called colorsCopy.
   Note: We did not cover the spread operator in class. We do not expect you to know how to use it. Challenge yourself by going online and researching what the spread operator is and how to use it.
 */
-
 //do not edit this object
 const colors = {
   background: 'red',
@@ -233,17 +230,14 @@ const colors = {
   text: 'yellow'
 }
 //do not edit this object
-
 //Code Here 
-
-
-
+let {...colorsCopy} = colors
+console.log(colorsCopy)
 /*
  Now use the spread operator to combine the following 2 objects into one. 
  Call the new variable helensInfo. 
  When they combine, none of the properties should be repeated.
 */
-
 //do not edit the objects below
 const contactInfo = {
   firstName: 'Helen',
@@ -251,7 +245,6 @@ const contactInfo = {
   phoneNumber: 1234445555,
   email: 'helen@mymail.com',
 }
-
 const shippingInfo = {
   firstName: 'Helen',
   lastName: 'Parr',
@@ -261,13 +254,10 @@ const shippingInfo = {
   zipCode: 85004,
 }
 //do not edit the objects above
-
 //Code Here
-
-
+let helensInfo = {...contactInfo, ...shippingInfo}
+console.log(helensInfo)
 //Print helensInfo to see what it looks like, there should be no repeating properties.
-
-
 //////////////////////////// PROBLEM 12 ////////////////////////////
 
 /*
@@ -281,7 +271,15 @@ const shippingInfo = {
 */
 
 //Code Here 
-
+class Vehicle {
+  constructor(color, capacity, mileage){
+  this.color = color
+  this.capacity = capacity
+  this.mileage = mileage
+} move(miles){
+  this.miles += miles
+}
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
